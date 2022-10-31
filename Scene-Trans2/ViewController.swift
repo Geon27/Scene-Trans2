@@ -24,5 +24,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func movePresent(_ sender: Any) {
+        // 두번째 뷰 컨트롤러 인스턴트를 가져온다.
+        guard let uvc = self.storyboard?.instantiateViewController(withIdentifier: "SecondVC") else {
+            return
+        }
+        // 화면을 전환한다.
+        self.present(uvc, animated: true)
     }
 }
